@@ -1,45 +1,19 @@
-gsap.from(".banner-section a, .text-rejoice", {
-    scale: 0,
+gsap.from(".banner-section a, .text-rejoice, .nav-btn .btn ", {
     y:120,
-    repeat:1,
-    delay: 0.2,
-    duration: 2,
+    delay:0.1,
+    duration: 1,
     stagger: 0.1,
     opacity: 0,
 })
 
-gsap.from(".repeated-heading", {
-    scale: 0,
+gsap.from(".repeated-heading,.repeated-para", {
     x:-820,
-    repeat:1,
-    delay: 0.2,
+    delay: 0.1,
     duration: 2,
     stagger: 0.1,
     opacity: 0,
     scrollTrigger: ".repeated-heading"
 })
-gsap.from(".repeated-para", {
-    scale: 0,
-    x:230,
-    repeat:1,
-    delay: 0.1,
-    duration:3,
-    stagger: 0.1,
-    opacity: 0,
-    scrollTrigger: ".repeated-para"
-})
-
-gsap.from(".nav-btn .btn", {
-    scale: 0,
-    x:200,
-    repeat:1,
-    delay: 0.2,
-    duration: 1,
-    stagger: 0.1,
-    opacity: 0,
-    scrollTrigger: ".nav-btn .btn"
-})
-
 gsap.to(".Main-gallery-hover-effect .img-fluid", {
     x: 150,
     y: 20,
@@ -59,61 +33,23 @@ gsap.to(".text-moving-section h2", {
         scroller: "body",
         color: "white",
         scrub: 2,
-        pin: true
+        stagger:1,
+        scrollTrigger: ".text-moving-section h2"
+
     }
 })
-
 
 
 gsap.from(".magicright", {
     scale: 0,
     x:-820,
-    repeat:1,
     backgroundColor:"black",
     delay: 2,
     duration: 0.2,
-    stagger: 1,
+    stagger: 0.3,
     opacity: 0,
     scrollTrigger: ".magicright"
 })
-
-
-gsap.to(".img-marquee-section img", {
-    transform: "translateX(-330%)",
-    scrollTrigger: {
-        trigger: ".img-marquee-section",
-        scroller: "body",
-        end: "top -30%",
-        scrub: 2,
-        stagger: 1
-    }
-})
-
-
-// var path = "M 10 100 Q 500 100 990 100"
-// var finalPath = "M 10 100 Q 500 100 990 100"
-
-
-// var linemovings = document.querySelector(".linemoving")
-
-// linemovings.addEventListener("mousemove", function (dets) {
-//     path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`
-
-//     gsap.to("svg path", {
-//         attr: { d: path },
-//         duration: 0.2,
-//         ease: "power3.out"
-//     })
-// })
-
-// linemovings.addEventListener("mouseleave", function (dets) {
-//     gsap.to("svg path", {
-//         attr: { d: finalPath },
-//         duration: 0.3,
-//         ease: "bounce.out"
-//     })
-// })
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,5 +80,22 @@ gsap.from(split.words, {
 
 
 
+// --- image increasing ---
+
+const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".orangeWrapper",
+      scrub: true,
+      pin: true,
+      start: "50% 50%",
+      end: "+=200%"
+    }
+  })
+  
+  .from(".orange", {
+    scale: 0.5, 
+    ease: "none"
+  })
+  
 
 

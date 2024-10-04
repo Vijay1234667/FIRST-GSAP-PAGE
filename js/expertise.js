@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.registerPlugin(ScrollTrigger);
     const lennis = new Lenis({
-        duration: 1.2
+        duration: 1.2,
+        smooth: true
     });
     function raf(time) {
         lennis.raf(time)
         requestAnimationFrame(raf)
     };
     lennis.on('scroll', ScrollTrigger.update)
-    gsap.ticker.add((title) => {
+    gsap.ticker.add((time) => {
         lennis.raf(time * 1000)
     });
     let workInfoItems = document.querySelectorAll('.expertise-right-img');
