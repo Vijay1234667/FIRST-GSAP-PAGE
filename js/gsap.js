@@ -43,9 +43,9 @@ gsap.to(".text-moving-section h2", {
 gsap.from(".magicright", {
     scale: 0,
     x:-820,
-    backgroundColor:"black",
-    delay: 2,
-    duration: 0.2,
+    backgroundColor:"red",
+    delay: 1,
+    duration: 0.1,
     stagger: 0.3,
     opacity: 0,
     scrollTrigger: ".magicright"
@@ -75,6 +75,24 @@ gsap.from(split.words, {
   color:"#ff8709",
   repeat:-1, 
   stagger: 0.1
+});
+
+var split = new SplitText("#Expert", {type: "chars"});
+gsap.from(split.chars, {
+  duration: 0.2, 
+  x: 10, 
+  color:"#ff8709",
+  repeat:1, 
+  stagger: 0.1,
+});
+
+var split = new SplitText("#Expert1", {type: "chars"});
+gsap.from(split.chars, {
+  duration: 0.2, 
+  x: 10, 
+  color:"#FF0000",
+  repeat:1, 
+  stagger: 0.1,
 });
 
 

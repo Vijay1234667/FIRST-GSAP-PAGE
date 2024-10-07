@@ -19,9 +19,6 @@ allBox.addEventListener("mouseleave", function(){
     })
 })
 
-
-
-
 var allBoxa = document.querySelector(".bg-rainbow-section")
 var cursora = document.querySelector(".cursormover-rainbow")
 
@@ -39,6 +36,29 @@ allBoxa.addEventListener("mouseenter", function(){
 })
 allBoxa.addEventListener("mouseleave", function(){
     gsap.to(cursora,{
+        scale:0
+    })
+})
+
+
+var cursormovecard = document.querySelector(".discover-body-content")
+var cursorcard = document.querySelector(".cursormover-card")
+
+cursormovecard.addEventListener("mousemove", function(dets){
+    gsap.to(cursorcard,{
+        x:dets.x,
+        y:dets.y,
+    })
+}) 
+
+cursormovecard.addEventListener("mouseenter", function(){       
+    gsap.to(cursorcard,{
+        scale:1
+        
+    })
+})
+cursormovecard.addEventListener("mouseleave", function(){
+    gsap.to(cursorcard,{
         scale:0
     })
 })
